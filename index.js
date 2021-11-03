@@ -28,7 +28,16 @@ function office(){
       return res.json()
     })
     .then(data => {
-      return data.content + " - " + data.character.firstname + " " + data.character.lastname
+      return data.data.content + " - " + data.data.character.firstname + " " + data.data.character.lastname
+    })
+}
+function trump(){
+  return fetch("https://api.tronalddump.io/random/quote")
+    .then(res => {
+      return res.json()
+    })
+    .then(data => {
+      return data.value + " - " + data._embedded.author[0].name
     })
 }
 function got(){
@@ -62,8 +71,14 @@ client.on('messageCreate', mssg => {
   if(mssg.content === '/got'){
     got().then(quote => mssg.reply("```"+quote+"```"))
   }
+  if(mssg.content === '/trump'){
+    trump().then(quote => mssg.reply("```"+quote+"```"))
+  }
     if(mssg.content === '/office'){
     office().then(quote => mssg.reply("```"+quote+"```"))
+  }
+  if(mssg.content === '/she'){
+    mssg.reply("```That's what she said. - Michael Scott```")
   }
   
 });
