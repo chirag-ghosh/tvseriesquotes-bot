@@ -1,4 +1,6 @@
-# <div style="display:flex;align-items:center;justify-content:center;"><img src="icon.png" height="100">TV Series Quotes</div>
+<div align="center"><img src="icon.png" height="100"></div>
+
+# <div align="center">TV Series Quotes</div>
 </br>
 A discord bot to show random dialogues from some famous TV series.
 </br></br>
